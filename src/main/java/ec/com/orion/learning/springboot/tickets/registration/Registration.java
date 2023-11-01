@@ -5,10 +5,13 @@
 
 package ec.com.orion.learning.springboot.tickets.registration;
 
+import jakarta.validation.constraints.NotBlank;
+
 /**
  *
  * @author dmac240713
  */
-public record Registration(Integer id, Integer productId, String ticketCode, String attendeeName) {
+public record Registration(Integer id, Integer productId, String ticketCode,
+		@NotBlank(message = "Attendee Name is required") String attendeeName) {
 
 }

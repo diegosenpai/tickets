@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping(path = "registration")
 public class RegistrationController {
@@ -23,7 +25,7 @@ public class RegistrationController {
 	}
 
 	@PostMapping
-	public Registration register(@RequestBody Registration registration) {
+	public Registration register(@RequestBody @Valid Registration registration) {
 		return registrationRepo.create(registration);
 	}
 
