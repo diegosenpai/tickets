@@ -5,13 +5,19 @@
 
 package ec.com.orion.learning.springboot.tickets.registration;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import jakarta.validation.constraints.NotBlank;
 
 /**
  *
  * @author dmac240713
  */
-public record Registration(Integer id, Integer productId, String ticketCode,
+@Document("registrations")
+public record Registration(
+		@Id
+		String id, Integer productId, String ticketCode,
 		@NotBlank(message = "Attendee Name is required") String attendeeName) {
 
 }

@@ -26,7 +26,7 @@ public class RegistrationController {
 
 	@PostMapping
 	public Registration register(@RequestBody @Valid Registration registration) {
-		return registrationRepo.create(registration);
+		return registrationRepo.save(registration);
 	}
 
 	@PutMapping
